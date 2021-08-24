@@ -25,14 +25,19 @@ export default function TextForm(props) {
   return (
     <>
       <div>
-          
-        <div className="mb-3">
+        <div
+          className={`mb-3 text-${
+            props.mode === "light" ? "dark" : "light"
+          } mx-2`}
+        >
           <label htmlFor="myBox" className="form-label">
             <h3>{props.heading}</h3>
           </label>
           <textarea
             onChange={handleOnChange}
-            className="form-control"
+            className={`form-control bg-${props.mode} text-${
+              props.mode === "light" ? "dark" : "light"
+            }`}
             id="myBox"
             value={text}
             rows="8"
@@ -56,7 +61,10 @@ export default function TextForm(props) {
         Convert To LowerCase
       </button>
 
-      <div className="container my-3">
+      <div
+        className={`container my-3 text-${props.mode === 'dark' ? 'light' : 'dark' }  `}
+        
+      >
         <h3>Your Text Summery</h3>
         <p>
           Words - {text.split(" ").length} || Characters - {text.length}
