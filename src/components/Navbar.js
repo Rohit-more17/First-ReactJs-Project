@@ -2,9 +2,10 @@
 
 import React from "react";
 import PropTypes from "prop-types";
-export default function Navbar(props) {
+// import ColorPallate from "./ColorPallate";
 
-  
+export default function Navbar(props) {
+  const handleDarkBlue = () => {};
 
   return (
     <>
@@ -40,7 +41,11 @@ export default function Navbar(props) {
               </li>
             </ul>
 
-            <div className={`form-check form-switch text-${props.mode === 'light'? 'dark':'light'} mx-2`}>
+            <div
+              className={`form-check form-switch text-${
+                props.mode === "light" ? "dark" : "light"
+              } mx-2`}
+            >
               <input
                 className="form-check-input"
                 type="checkbox"
@@ -57,12 +62,14 @@ export default function Navbar(props) {
 
             <form className="d-flex">
               <input
-                className={`form-control bg-${props.mode} mx-2 text-${props.mode === 'light'? 'dark':'light'} mx-2`}
+                className={`form-control bg-${props.mode} mx-2 text-${
+                  props.mode === "light" ? "dark" : "light"
+                } mx-2`}
                 type="search"
                 placeholder="Search"
                 aria-label="Search"
               />
-              <button className={'btn btn-outline-success  '} type="submit">
+              <button className={"btn btn-outline-success  "} type="submit">
                 Search
               </button>
             </form>
